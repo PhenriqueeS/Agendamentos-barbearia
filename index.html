@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- Declara que este é um documento HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivo para dispositivos móveis -->
+    <title>Barbearia Top - Agendamento</title> <!-- Título que aparece na aba do navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Conecta o arquivo CSS externo -->
+</head>
+<body>
+    <header>
+        <h1>💈 Barbearia Top</h1> <!-- Nome da barbearia -->
+        <p>Agende seu horário</p> <!-- Descrição ou instrução para o usuário -->
+    </header>
+
+    <!-- Seção do formulário de agendamento -->
+    <section class="formulario">
+        <h2>📅 Novo Agendamento</h2> <!-- Título do formulário -->
+
+        <!-- Campo para o nome do cliente -->
+        <input type="text" id="nome" placeholder="Seu nome">
+        
+        <!-- Campo para escolher o serviço -->
+        <select id="servico">
+            <option value="">Selecione o serviço</option>
+            <option value="Corte de Cabelo">Corte de Cabelo</option>
+            <option value="Barba">Barba</option>
+            <option value="Corte + Barba">Corte + Barba</option>
+        </select>
+
+        <!-- Campo para escolher a data do agendamento -->
+        <input type="date" id="data">
+        <!-- Campo para escolher o horário do agendamento -->
+        <input type="time" id="hora">
+
+        <!-- Botão que chama a função 'agendar' quando clicado -->
+        <button onclick="agendar()">Agendar</button>
+    </section>
+
+    <!-- Seção onde os agendamentos realizados serão exibidos -->
+    <section class="agendamentos" id="listaAgendamentos">
+        <h2>📌 Agendamentos:</h2>
+        <!-- Os cards de agendamento aparecem aqui dinamicamente via JavaScript -->
+    </section>
+ 
+
+    <!-- Conecta o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

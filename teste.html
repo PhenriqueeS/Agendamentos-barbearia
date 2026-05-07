@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 200px;
+        }
+        .agendamento {
+            margin-top: 20px;
+        }
+    </style>
+    <h2>Agendamento</h2>
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <input type="date" id="data" placeholder="Data do agendamento">
+    <input type="time" id="horario" placeholder="Horário do agendamento">
+    <button onclick="agendar()"">Agendar</button>
+    <div class="agendamento" id="ListadeAgendamentos">
+        <h3>Agendamentos</h3>
+    </div>
+    <script>
+        function agendar() {
+            const nome = document.getElementById('nome').value;
+            const data = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+
+            if (nome && data && horario) {
+                const agendamento = `${nome} - ${data} às ${horario}`;
+                const lista = document.getElementById('ListadeAgendamentos');
+                const item = document.createElement('p');
+                item.textContent = agendamento;
+                lista.appendChild(item);
+
+                // Limpar os campos após o agendamento
+                document.getElementById('nome').value = '';
+                document.getElementById('data').value = '';
+                document.getElementById('horario').value = '';
+            } else {
+                alert('Por favor, preencha todos os campos para agendar.');
+            }
+        }
+    </script>
+</body>
+</html>

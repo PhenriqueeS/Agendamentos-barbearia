@@ -1,0 +1,425 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: 'Arial', sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #000000,
+            #111111,
+            #1a1a1a
+        );
+
+    background-size: 400% 400%;
+
+    animation: backgroundMove 12s ease infinite;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    text-align: center;
+
+    padding-bottom: 50px;
+}
+
+/* Fundo animado */
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow:
+            0 0 5px rgba(255,255,255,0.05);
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px rgba(255,255,255,0.15);
+    }
+
+    100% {
+        box-shadow:
+            0 0 5px rgba(255,255,255,0.05);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: rgba(17,17,17,0.7);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    padding: 30px;
+
+    animation: fadeUp 0.7s ease;
+}
+
+header h1 {
+    font-size: 2.5rem;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #bbbbbb;
+
+    font-size: 1.1rem;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formulario {
+    width: 70%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    background: rgba(28,28,28,0.72);
+
+    backdrop-filter: blur(14px);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    animation: fadeUp 0.9s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.formulario:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(255,255,255,0.08);
+}
+
+.formulario h2 {
+    font-size: 1.8rem;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid #3a3a3a;
+
+    background: rgba(40,40,40,0.8);
+
+    color: white;
+
+    font-size: 1rem;
+
+    transition:
+        0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: white;
+
+    transform: scale(1.01);
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.12);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #888;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: black;
+
+    font-weight: bold;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: #e9e9e9;
+
+    box-shadow:
+        0 10px 25px rgba(255,255,255,0.15);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Brilho animado */
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.5),
+            transparent
+        );
+
+    transition: 0.7s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* =========================
+   CONTAINER AGENDA
+========================= */
+
+.agendamentos {
+    width: 70%;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(17,17,17,0.75);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.04);
+
+    animation: fadeUp 1s ease;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.agendamento-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: rgba(34,34,34,0.85);
+
+    margin: 18px 0;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    border-left: 5px solid white;
+
+    animation: fadeUp 0.5s ease;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Glow lateral */
+.agendamento-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #777777,
+            #ffffff
+        );
+
+    animation: glow 3s infinite;
+}
+
+.agendamento-card:hover {
+    transform:
+        translateY(-5px)
+        scale(1.01);
+
+    background: rgba(45,45,45,0.95);
+
+    box-shadow:
+        0 15px 30px rgba(255,255,255,0.08);
+}
+
+/* Textos */
+.agendamento-card p {
+    margin: 8px 0;
+
+    color: #dddddd;
+
+    line-height: 1.5;
+}
+
+.agendamento-card strong {
+    color: white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+    .formulario,
+    .agendamentos {
+        width: 92%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .formulario {
+        padding: 25px;
+    }
+
+    .agendamento-card {
+        padding: 18px;
+    }
+}
